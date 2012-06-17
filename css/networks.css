@@ -1,0 +1,48 @@
+
+/* SOCIAL NETWORKS */
+/* Images/Classes are named based on 
+   the associative array keys in config.php */
+.facebook .footer {
+  color: white;
+  background-color: #899ECB;
+}
+
+.instagram .footer {
+  color: white;
+  background-color: #a97e5e;
+}
+
+.github .footer {
+  color: white;
+  background-color: #666;
+}
+
+.google-plus .footer {
+	color: white;
+	background-color: #333;
+}
+
+.linkedin .footer {
+  color: white;
+  background-color: #2C2827;
+}
+
+.pinterest .footer {
+  color: white;
+  background-color: #E83C42;
+}
+
+.twitter .footer {
+  color: white;
+  background-color: #86C2DB;
+}
+
+.stackoverflow .footer {
+  color: white;
+  background-color: #FE7A15;
+}
+
+.reddit .footer {
+  color: white;
+  background-color: #FF4500;
+}
