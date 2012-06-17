@@ -1,6 +1,7 @@
 Infinite-Social-Wall
 ====================
-An infinite social stream based on RSS feeds with a MySQL backend.
+###An infinite social stream based on RSS feeds with a MySQL backend.
+
 A video demonstrating the functionality (unfortunately not showing the beautiful CSS3 transitions) can be seen on [youtube][video].
 
 ##Supported Networks (Icons/Styles included)
@@ -19,9 +20,13 @@ I haven't tested this under mobile browsers either.
 
 ##How it Works
 When the demo.php page is loaded, the first 20 entries are loaded into our container div (_simulating_ a call to get_stream.php?p=1). Isotope and infinite-scroll are initialized on this container div.
+
 On the page load, a request is made to update_stream.php which queries all the RSS feeds in config.php and adds new entries to the MySQL database. New entries are also output as HTML. These entries are inserted into our isotope container (in time sorted order).
+
 In this way, each page viewer is guarenteed to have the latest social content. If your social stream is hit often enough, no cron job to ping update_stream.php will be necessary. Currently, a 15 minute cache on RSS queries is implemented (via SimplePie).
+
 update_stream.php would also be light enough to call on a timer (in lieu of push notifications).
+
 By utilizing the MySQL database, a history of all your social items is created, allowing nearly limitless scrolling (in comparison to other API based methods).
 
 ##Installation
