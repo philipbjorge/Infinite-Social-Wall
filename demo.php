@@ -56,7 +56,7 @@ body {
         navSelector  : '#social-nav',    // selector for the paged navigation 
         nextSelector : '#social-nav a',  // selector for the NEXT link (to page 2)
         itemSelector : '.social-item',     // selector for all items you'll retrieve
-		bufferPx : 400,
+		bufferPx : 200,
 		debug: true,
         loading: {
             finishedMsg: 'No more pages to load.',

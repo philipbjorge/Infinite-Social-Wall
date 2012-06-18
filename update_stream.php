@@ -34,6 +34,4 @@ foreach($feed->get_items() as $item) {
 
 $mysqli->close();
 
-// TODO: Create RSS
-
 ?>

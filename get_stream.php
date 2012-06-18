@@ -1,6 +1,24 @@
 <?php
 require('config.php');
 require('helpers.php');
+
+function replace_api_keywords($apis) {
+	$urls = array();
+	$categories = array();
+	foreach ($apis as $cat => $api) {
+		$url = $api['url'];
+		// Replace our {XXX} variables in our URL strings
+		foreach ($api as $replacement_key => $replacement) {
+			if ($replacement_key != 'url') {
+				$replacement_key = strtoupper($replacement_key);
+				$url = str_replace("{{$replacement_key}}", $replacement, $url);
+			}
+		}
+		$categories[$url] = $cat;
+		$urls[] = $url;
+	}
+	return array($urls, $categories);
+}
   
 // Pagination variable.
 if (!isset($_GET['p']))
