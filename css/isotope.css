@@ -15,10 +15,21 @@
   width: 100%;
   max-width: 100%;
 }
+.social-item .header {
+  padding: 3px;
+  font-weight: bold;
+  border-bottom: 1px solid #666;
+  text-shadow: 1px 1px 1px black;
+}
 .social-item .footer {
   min-height: 28px;
   padding: 4px 0px 0px 4px;
   border-top: 1px solid #666;
+  text-shadow: 1px 1px 1px black;
+}
+.social-item  .footer a{
+  color: inherit;
+  font-weight: bold;
 }
 .social-item .footer img {
   vertical-align: text-bottom;
