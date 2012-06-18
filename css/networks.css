@@ -3,6 +3,16 @@
 /* Images/Classes are named based on 
    the associative array keys in config.php */
 
+.social-item .header {
+  padding: 3px;
+  font-weight: bold;
+}
+
+.social-item  .footer a{
+  color: inherit;
+  font-weight: bold;
+}
+   
 .instagram .footer, .instagram .header {
   color: white;
   background-color: #a97e5e;

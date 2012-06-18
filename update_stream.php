@@ -2,7 +2,7 @@
 
 require_once('config.php');
 require_once('helpers.php');
-require_once('simplepie.inc');
+require_once('lib/simplepie.inc');
 
 // Creates our url list and our URL => category map.
 list($urls, $categories) = replace_api_keywords($apis);
