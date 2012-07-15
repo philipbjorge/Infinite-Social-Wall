@@ -1,10 +1,33 @@
 <?php
+// Infinite Social Wall
+// 7.15.2012
+//
+// Philip Bjorge
+// https://github.com/philipbjorge/Infinite-Social-Wall
+// Dual MIT/BSD License
+// http://modernizr.com/license/
+//
+//
 
-header('Content-type:text/html; charset=utf-8');
-//ini_set('display_errors',0);
-//ini_set('display_startup_errors',0);  
+//
+// MODIFIABLE SETTINGS
+//
+
+// MySQL Settings
+$mysql_server = "localhost";
+$mysql_user = "root";
+$mysql_pass = "root";
+$mysql_db = "infinite_social_wall";
+$mysql_table = "archived_social_items";
+
+// "Pagination" settings - how many social items to output on each load
+$results_per_page = 20;
 
 // RSS Feeds ("APIs")
+// the url key points to your RSS feed.
+// uppercase keywords like {USER} are replaced by the lowercase
+// key in the corresponding array.
+// e.g. "http://gplus-to-rss.appspot.com/rss/{USER}" becomes "http://gplus-to-rss.appspot.com/rss/111577025166114857734"
 $apis = array(
 	"google-plus" => array(
 		"user" => "111577025166114857734",
@@ -36,11 +59,10 @@ $apis = array(
 	)
 );
 
+//
+// END MODIFIABLE SETTINGS
+//
+
 // MySQL Connection
-$mysqli = new mysqli("localhost", "root", "", "infinite_social_wall");
-$mysql_table = "archived_social_items";
-
-// "Pagination" settings
-$results_per_page = 20;
-
+$mysqli = new mysqli($mysql_server, $mysql_user, $mysql_pass, $mysql_db);
 ?>

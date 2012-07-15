@@ -1,9 +1,17 @@
 <html>
 <head>
+<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <style type="text/css"> .clear { zoom: 1;display: block;} </style> <![endif]-->
 <style type="text/css">
 body {
   font-family: Verdana;
-  background-image: url(images/old_wall.png);
+  background: #e5e5e5; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e5e5e5 0%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #e5e5e5 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e5e5e5 0%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e5e5e5 0%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #e5e5e5 0%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 #social-container {
   width: 50%;
@@ -17,63 +25,11 @@ body {
   <div id="social-container" class="variable-sizes clearfix infinite-scrolling">
 	<?php require_once('get_stream.php'); ?>
   </div>
-  <div id="new-content"></div>
   
   <script src="js/jquery-1.7.1.min.js"></script>
   <script src="js/jquery.isotope.min.js"></script>
   <script src="js/jquery.infinitescroll.min.js"></script>
-  <script src="http://timeago.yarp.com/jquery.timeago.js" type="text/javascript"></script>
-  <script>
-    $(window).load(function(){
-      var $container = $('#social-container');
-    
-      $container.isotope({
-        itemSelector : '.social-item',
-		animationEngine : 'best-available',
-        animationOptions : {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        },
-		getSortData: {
-			time: function( $elem ) {
-				return $elem.find('time').attr('datetime');
-			}
-		},
-		sortBy: 'time',
-		sortAscending: false
-      });
-	  
-	  $("#new-content").load('update_stream.php', function() {
-		$container.isotope('insert', $(this).children('.social-item'));
-		$("time").timeago();
-	  });
-	  
-	  if ($("time").length)
-		$("time").timeago();
-      
-      $container.infinitescroll({
-        navSelector  : '#social-nav',    // selector for the paged navigation 
-        nextSelector : '#social-nav a',  // selector for the NEXT link (to page 2)
-        itemSelector : '.social-item',     // selector for all items you'll retrieve
-		bufferPx : 200,
-		debug: true,
-        loading: {
-            finishedMsg: 'No more pages to load.',
-            img: 'images/loader.gif'
-          }
-        },
-        // call Isotope as a callback
-        function( newElements ) {
-			var $newElems = $(newElements);
-			$newElems.imagesLoaded(function(){
-				$container.isotope('appended', $newElems );
-				$("time").timeago();
-			});
-        }
-      );
-	  
-    });
-  </script>
+  <script src="js/jquery.timeago.js" type="text/javascript"></script>
+  <script src="js/jquery.infinitesocialwall.js" type="text/javascript"></script>
 </body>
 </html>
