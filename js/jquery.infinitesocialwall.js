@@ -18,6 +18,7 @@
 		delete div;
 	  })();
     
+    $(window).load(function() {
       $container.isotope({
         itemSelector : '.social-item',
 		animationEngine : 'best-available',
@@ -34,6 +35,7 @@
 		sortBy: 'time',
 		sortAscending: false
       });
+    });
 	  
 	  $("#new-content").load('get_stream.php?p=update', function() {
 		$container.isotope('insert', $(this).children('.social-item'));
