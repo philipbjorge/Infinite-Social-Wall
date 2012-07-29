@@ -47,7 +47,7 @@
       
   $container.infinitescroll({
     loading: {
-      img: "images/loading.gif"
+      img: "/images/loading.gif"
     }
     navSelector  : '#social-nav',    // selector for the paged navigation 
     nextSelector : '#social-nav a',  // selector for the NEXT link (to page 2)
