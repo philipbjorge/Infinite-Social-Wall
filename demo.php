@@ -25,6 +25,7 @@ body {
   <div id="social-container" class="variable-sizes clearfix infinite-scrolling">
 	<?php require_once('get_stream.php'); ?>
   </div>
+  <div id="new-content"></div>
   
   <script src="js/jquery-1.7.1.min.js"></script>
   <script src="js/jquery.isotope.min.js"></script>

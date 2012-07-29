@@ -1,3 +1,10 @@
+#infscr-loading {
+  z-index: 3 !important;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.8);
+}
+
 .social-item {
   width: 300px;
   margin: 5px;
