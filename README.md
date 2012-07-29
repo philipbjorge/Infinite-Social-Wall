@@ -3,6 +3,7 @@ Infinite-Social-Wall
 ###An infinite social stream based on RSS feeds with a MySQL backend.
 
 ![ISW Demo](http://i.imgur.com/pbmEG.jpg)
+
 A video demonstrating the functionality (unfortunately not showing the beautiful CSS3 transitions) can be seen on [youtube][video]. As well as on my personal homepage [philipbjorge.com][mysite].
 
 ##Officially Supported Networks (Icons/Styles included)
@@ -17,7 +18,7 @@ Currently supports the following social networks (however it should work reasona
  * Instagram
 
 ##Installation
-Detailed instructions can be found on the [wiki](https://github.com/philipbjorge/Infinite-Social-Wall/wiki/Detailed-Installation).
+##Detailed instructions can be found on the [wiki](https://github.com/philipbjorge/Infinite-Social-Wall/wiki/Detailed-Installation).
 ###Database + Server
 Create a database (or use an existing one).
 
@@ -69,25 +70,6 @@ Beta (7.15.2012)
 Alpha (6.17.2012)
 
 * Initial implementation.
-
-##How it Works
-###Overview
-When the demo.php page is loaded, the first 20 entries are loaded into our container div (_simulating_ a call to get_stream.php?p=1). Isotope and infinite-scroll are initialized on this container div.
-
-On the page load, an asynchronous request is made to get_stream.php?p=update which queries all the RSS feeds in config.php and adds new entries to the MySQL database. New entries are also output as HTML which are inserted into our isotope container (in time sorted order).
-
-In this way, each page viewer gets the latest social content and is also our "cron job." **Currently, a 15 minute cache on RSS queries is implemented (via SimplePie).**
-
-By utilizing the MySQL database, a history of all your social items is created, allowing nearly limitless scrolling after the app has been installed for a sufficient time (in contrast to other API based methods that can only show the latest social items).
-
-###Details
-Content boxes contain:
-
- * .header div with the RSS items title (if it differs from the content).
- * .content div with the RSS items content.
- * .footer div with an image, the RSS item's link and date.
-
-Links that are not wrapped in anchor tags are wrapped server-side and trimmed. E.g. http://losdfsdfsdfsdfsdfngurl.com would become http://lo...ngurl.com.
 
 ##License
 Dual licensed under the MIT/BSD licenses.
