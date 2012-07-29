@@ -1,6 +1,6 @@
 <?php
 // Infinite Social Wall
-// 7.15.2012
+// 7.29.2012
 //
 // Philip Bjorge
 // https://github.com/philipbjorge/Infinite-Social-Wall
