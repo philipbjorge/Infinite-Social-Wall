@@ -1,6 +1,7 @@
 Infinite-Social-Wall
 ====================
 ###An infinite social stream based on RSS feeds with a MySQL backend.
+####Hosted Version Coming Soon - [infinitesocialwall.appspot.com](http://infinitesocialwall.appspot.com)
 
 ![ISW Demo](http://i.imgur.com/pbmEG.jpg)
 
