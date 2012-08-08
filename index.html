@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Infinite-social-wall by philipbjorge</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Infinite-social-wall</h1>
+          <h2>An isotope powered social stream.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/philipbjorge/Infinite-Social-Wall/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/philipbjorge/Infinite-Social-Wall/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/philipbjorge/Infinite-Social-Wall" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>Infinite-Social-Wall</h1>
+
+<h2>An infinite social stream based on RSS feeds with a MySQL backend.</h2>
+
+<h3>Hosted Version Coming Soon - <a href="http://infinitesocialwall.appspot.com">infinitesocialwall.appspot.com</a>
+</h3>
+
+<p><img src="http://i.imgur.com/pbmEG.jpg" alt="ISW Demo"></p>
+
+<p>A video demonstrating the functionality (unfortunately not showing the beautiful CSS3 transitions) can be seen on <a href="http://www.youtube.com/watch?v=NTuPJP86ouk">youtube</a>. As well as on my personal homepage <a href="http://www.philipbjorge.com">philipbjorge.com</a>.</p>
+
+<h2>Officially Supported Networks (Icons/Styles included)</h2>
+
+<p>Currently supports the following social networks (however it should work reasonably well with any RSS feed):</p>
+
+<ul>
+<li>Google Plus</li>
+<li>Github</li>
+<li>Pinterest</li>
+<li>Twitter</li>
+<li>Stackoverflow</li>
+<li>Reddit</li>
+<li>Instagram</li>
+</ul><h2>Installation</h2>
+
+<h2>Detailed instructions can be found on the <a href="https://github.com/philipbjorge/Infinite-Social-Wall/wiki/Detailed-Installation">wiki</a>.</h2>
+
+<h3>Database + Server</h3>
+
+<p>Create a database (or use an existing one).</p>
+
+<p>Create the archive table.</p>
+
+<pre><code>CREATE TABLE `archived_social_items` (
+    `id` varchar(32) NOT NULL,
+    `category` varchar(255) NOT NULL,
+    `title` text NOT NULL,
+    `content` text NOT NULL,
+    `link` text NOT NULL,
+    `date` datetime NOT NULL,
+    UNIQUE KEY `item_id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+</code></pre>
+
+<p>Modify config.php's mysql settings to point to your database.</p>
+
+<p>Create and/or chmod the cache folder to be writable by your server (755).</p>
+
+<p>Chmod the config file to 640.</p>
+
+<h3>RSS Feeds</h3>
+
+<p>New feeds can be added to the application by modifying the $apis array in config.php</p>
+
+<h3>Your Page</h3>
+
+<p>The file demo.php provides a good minimal example of the requirements.</p>
+
+<h3>Customizing CSS</h3>
+
+<ol>
+<li>Customizing of the actual content boxes can be found in isotope.css</li>
+<li>Customizing of specific feed themes can be found in networks.css. Class names are assigned to content boxes based on the key in your $apis variable in config.php</li>
+</ol><h2>Changelog</h2>
+
+<p>Beta2 (7.29.2012)</p>
+
+<ul>
+<li>Updated demo.php to include all necessary markup.</li>
+<li>Added loader to infinite scroll.</li>
+<li>Trimmed down README and moved to wiki.</li>
+<li>Cleaned up infinitesocialwall javascript.</li>
+<li>Added minified version.</li>
+</ul><p>Beta (7.15.2012)</p>
+
+<ul>
+<li>Refactored PHP code into one file (and config/libs) for ease of distribution.</li>
+<li>Added HTML5 Shiv for IE support.</li>
+<li>Documented adding new services.</li>
+<li>Updated infinite scroll.</li>
+<li>Hiding new elements and fading them in (with jquery fallback).</li>
+<li>Added a license.</li>
+</ul><p>Alpha (6.17.2012)</p>
+
+<ul>
+<li>Initial implementation.</li>
+</ul><h2>License</h2>
+
+<p>Dual licensed under the MIT/BSD licenses.
+Text can be found <a href="http://modernizr.com/license/">here</a>.</p>
+
+<h2>Credits</h2>
+
+<p>Utilizes the following libraries:</p>
+
+<ul>
+<li>
+<a href="https://github.com/desandro/isotope">Isotope</a> - Free for non-commercial and personal applications (<a href="http://isotope.metafizzy.co/docs/license.html">details...</a>)</li>
+<li>
+<a href="https://github.com/paulirish/infinite-scroll">Infinite-Scroll</a> - MIT License</li>
+<li>
+<a href="https://github.com/jquery/jquery">jQuery</a> - MIT License</li>
+<li>
+<a href="https://github.com/simplepie/simplepie/">SimplePie</a> - BSD License</li>
+<li>
+<a href="https://github.com/rmm5t/jquery-timeago">jquery-timeago</a> - MIT License</li>
+<li>
+<a href="http://code.google.com/p/html5shiv/">html5shiv</a> - MIT License</li>
+<li>
+<a href="http://heydanno.com/blog/2010/02/08/detecting-css-transitions-support-using-javascript/">css3 transition detection</a> - Unknown</li>
+</ul><p>Icons are from <a href="http://icondock.com/free/vector-social-media-icons">icondock</a> which were released under the "Free to use for whatever purposes" license.</p>
+        </section>
+
+        <footer>
+          Infinite-social-wall is maintained by <a href="https://github.com/philipbjorge">philipbjorge</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33398374-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
+    </div>
+  </body>
+</html>
