@@ -1,6 +1,6 @@
 <?php
 // Infinite Social Wall
-// 7.29.2012
+// 10.8.2012
 //
 // Philip Bjorge
 // https://github.com/philipbjorge/Infinite-Social-Wall
@@ -51,7 +51,7 @@ function regexp_url_search($r) {
 function autoLinkUrls($text) {
 	// Callback preg_replace found on 
 	// http://stackoverflow.com/questions/9102003/php-auto-detect-links-and-put-them-into-a-tag-except-when-they-are-already
-	$text = preg_replace_callback('#(?<![href|src]\=[\'"])(https?|ftp|file)://[-A-Za-z0-9+&@\#/%()?=~_|$!:,.;]*[-A-Za-z0-9+&@\#/%()=~_|$]#', 'regexp_url_search', $text);
+	$text = preg_replace_callback('#(?<![href|src]\=[\'"]|=)(https?|ftp|file)://[-A-Za-z0-9+&@\#/%()?=~_|$!:,.;]*[-A-Za-z0-9+&@\#/%()=~_|$]#', 'regexp_url_search', $text);
 	return $text;
 }
 
