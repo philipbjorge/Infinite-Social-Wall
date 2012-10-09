@@ -52,6 +52,10 @@ The file demo.php provides a good minimal example of the requirements.
 2. Customizing of specific feed themes can be found in networks.css. Class names are assigned to content boxes based on the key in your $apis variable in config.php
 
 ##Changelog
+Beta2 Maintenance (10.8.2012)
+* Improved URL auto linking
+* Improved default image resolution display
+
 Beta2 (7.29.2012)
 * Updated demo.php to include all necessary markup.
 * Added loader to infinite scroll.
